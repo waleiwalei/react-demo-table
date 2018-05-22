@@ -21,7 +21,8 @@ export default class App extends Component {
         if(index > -1) {
             selectedItem.splice(index, 1);
         } else {
-            selectedItem.splice(index, 0, value);
+            selectedItem.push(value);
+            // selectedItem.splice(0, 0, value);
         }
         this.setState({
             selectedItem: selectedItem
@@ -42,15 +43,14 @@ export default class App extends Component {
     }
 
     getSelected = () => {
-        let str = this.state.selectedItem.join(',');
-        return '当前选中项：' + str;
+        return this.state.selectedItem.join(',');
     }
 
     render() {
         return (
             <div className="container">
                 <div>{ this.getItem() }</div>
-                <div>{ this.getSelected()}</div>
+                <div>当前选中项：{ this.getSelected()}</div>
             </div>
         )
     }
