@@ -1,0 +1,30 @@
+var fs = require('fs');
+
+console.log('');
+fs.readdir(process.cwd(), (err, files) => {
+    if(!files.length) {
+        console.log('No file to select');
+    } else {
+        console.log('select which file to read');
+    }
+
+    file = (i) => {
+        fs.stat(process.cwd() + '/' + file(i), (err, file) => {
+            if(file.isDirectory()) {
+                console.log('D-' + file);
+            } else {
+                console.log('F-' + file);
+            }
+        });
+        i++;
+        if(i == files.length) {
+            process.stdout.write('Select file to read');
+            process.stdin.resume();
+        } else {
+            file(i);
+        }
+    }
+    file(0);
+});
+
+

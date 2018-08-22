@@ -1,0 +1,22 @@
+{
+  "name": "reactrouter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router": "^4.2.0",
+    "redux": "^4.0.0",
+    "webpack": "latest"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.1.4"
+  }
+}
